@@ -1,60 +1,75 @@
 /* ProductPage.module.css */
 
 .productPage {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .productContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .productImage {
-    border-radius: 8px;
-    margin-bottom: 20px;
-    object-fit: cover;
-    width: 500px; /* Adjusted width */
-    height: auto; /* Keep aspect ratio */
-  }
-  
-  .productDetails {
-    text-align: center;
-  }
-  
-  .productName {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 10px 0;
-    color: black
-  }
-  
-  .productDescription {
-    font-size: 1.1rem;
-    margin: 10px 0;
-    color: #666;
-  }
-  
-  .productPrice {
-    font-size: 1.5rem;
-    color: #0070f3;
-    margin: 10px 0;
-  }
-  
-  .productCategory {
-    font-size: 1rem;
-    color: #555;
-    margin: 10px 0;
-  }
-  
-  .productDates {
-    font-size: 0.9rem;
-    color: #aaa;
-    margin: 10px 0;
-  }
-  
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.productContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  max-width: 50%;
+}
+
+.productImage {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 12px;
+  object-fit: cover;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.productImage:hover {
+  transform: scale(1.05);
+}
+
+.productDetails {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+}
+
+.productName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 15px 0;
+  color: #333;
+}
+
+.productPrice {
+  font-size: 1.8rem;
+  color: #0070f3;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.buyButton {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #0070f3;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.buyButton:hover {
+  background-color: #005bb5;
+}

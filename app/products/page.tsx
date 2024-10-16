@@ -1,30 +1,25 @@
 import Link from 'next/link';
 import styles from './productsPage.module.css';
+import productData from '../../products.json';
 
-async function getProducts() {
-  const res = await fetch(
-    'https://api.slingacademy.com/v1/sample-data/products'
-  );
-  if (!res.ok) throw new Error('Failed to fetch data');
-  const data = await res.json();
-
-  return data.products;
+function getProducts() {
+  return productData.slice(0, 10);
 }
 
-export default async function ProductsPage() {
-  const products = await getProducts();
+export default function ProductsPage() {
+  const products = getProducts();
 
   return (
     <div className={styles.productsPage}>
       <h1>Product List</h1>
       <ul className={styles.productList}>
-        {products.map((product: { id: number; description: string }) => (
+        {products.map((product) => (
           <li key={product.id}>
             <Link
               href={`/products/${product.id}`}
               className={styles.productLink}
             >
-              {product.description}
+              {product.name}
             </Link>
           </li>
         ))}
